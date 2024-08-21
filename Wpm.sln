@@ -3,25 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Management.Api", "Wpm.Management.Api\Wpm.Management.Api.csproj", "{B95B251A-3267-4EE7-B914-B8C516AA8116}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpm.Management.Api", "Wpm.Management.Api\Wpm.Management.Api.csproj", "{B95B251A-3267-4EE7-B914-B8C516AA8116}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Management.Domain", "Wpm.Management.Domain\Wpm.Management.Domain.csproj", "{F5248615-CA55-4DF0-BEF2-B42A877A82C4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpm.Management.Domain", "Wpm.Management.Domain\Wpm.Management.Domain.csproj", "{F5248615-CA55-4DF0-BEF2-B42A877A82C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Management.Domain.Tests", "Wpm.Management.Domain.Tests\Wpm.Management.Domain.Tests.csproj", "{F1067EE7-B135-45FF-8568-AD5172C9D32D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpm.Management.Domain.Tests", "Wpm.Management.Domain.Tests\Wpm.Management.Domain.Tests.csproj", "{F1067EE7-B135-45FF-8568-AD5172C9D32D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Clinic.Api", "Wpm.Clinic.Api\Wpm.Clinic.Api.csproj", "{6EFAB5F6-91D4-4521-B103-A2D9EBA6ECFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpm.Clinic.Api", "Wpm.Clinic.Api\Wpm.Clinic.Api.csproj", "{6EFAB5F6-91D4-4521-B103-A2D9EBA6ECFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Clinic.Domain", "Wpm.Clinic.Domain\Wpm.Clinic.Domain.csproj", "{29D25CCE-541A-46B9-B21C-DB5183AE89C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpm.Clinic.Domain", "Wpm.Clinic.Domain\Wpm.Clinic.Domain.csproj", "{29D25CCE-541A-46B9-B21C-DB5183AE89C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Clinic.Domain.Tests", "Wpm.Clinic.Domain.Tests\Wpm.Clinic.Domain.Tests.csproj", "{8801CC70-1827-4C83-82AC-CBA03DD402B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wpm.Clinic.Domain.Tests", "Wpm.Clinic.Domain.Tests\Wpm.Clinic.Domain.Tests.csproj", "{8801CC70-1827-4C83-82AC-CBA03DD402B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.SharedKernel", "Wpm.SharedKernel\Wpm.SharedKernel.csproj", "{1FB48F5B-57DA-4A31-8F40-CBCC83494994}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B95B251A-3267-4EE7-B914-B8C516AA8116}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -48,5 +47,12 @@ Global
 		{8801CC70-1827-4C83-82AC-CBA03DD402B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8801CC70-1827-4C83-82AC-CBA03DD402B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8801CC70-1827-4C83-82AC-CBA03DD402B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FB48F5B-57DA-4A31-8F40-CBCC83494994}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FB48F5B-57DA-4A31-8F40-CBCC83494994}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FB48F5B-57DA-4A31-8F40-CBCC83494994}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FB48F5B-57DA-4A31-8F40-CBCC83494994}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal

@@ -1,4 +1,4 @@
-﻿namespace Wpm.Management.Domain;
+﻿namespace Wpm.SharedKernel;
 
 public abstract class Entity : IEquatable<Entity>
 {

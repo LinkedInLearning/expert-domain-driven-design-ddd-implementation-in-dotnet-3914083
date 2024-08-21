@@ -1,6 +1,8 @@
-﻿namespace Wpm.Clinic.Domain;
+﻿using Wpm.SharedKernel;
 
-public class Consultation
+namespace Wpm.Clinic.Domain;
+
+public class Consultation : AggregateRoot
 {
 
 }
