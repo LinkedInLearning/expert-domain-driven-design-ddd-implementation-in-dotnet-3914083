@@ -1,4 +1,4 @@
-﻿namespace Wpm.Management.Domain.ValueObjects;
+﻿namespace Wpm.SharedKernel;
 public record Weight
 {
     public decimal Value { get; init; }
