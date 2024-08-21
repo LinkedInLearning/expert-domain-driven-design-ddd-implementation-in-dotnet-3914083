@@ -1,4 +1,4 @@
-﻿namespace Wpm.Management.Domain;
+﻿namespace Wpm.Management.Domain.ValueObjects;
 public record Weight
 {
     public decimal Value { get; init; }

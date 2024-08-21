@@ -1,4 +1,6 @@
-﻿namespace Wpm.Management.Domain;
+﻿using Wpm.Management.Domain.ValueObjects;
+
+namespace Wpm.Management.Domain.Entities;
 
 public class Pet : Entity
 {
