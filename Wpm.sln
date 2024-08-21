@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Management.Domain", "Wp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Management.Domain.Tests", "Wpm.Management.Domain.Tests\Wpm.Management.Domain.Tests.csproj", "{F1067EE7-B135-45FF-8568-AD5172C9D32D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Clinic.Api", "Wpm.Clinic.Api\Wpm.Clinic.Api.csproj", "{6EFAB5F6-91D4-4521-B103-A2D9EBA6ECFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Clinic.Domain", "Wpm.Clinic.Domain\Wpm.Clinic.Domain.csproj", "{29D25CCE-541A-46B9-B21C-DB5183AE89C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpm.Clinic.Domain.Tests", "Wpm.Clinic.Domain.Tests\Wpm.Clinic.Domain.Tests.csproj", "{8801CC70-1827-4C83-82AC-CBA03DD402B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +36,17 @@ Global
 		{F1067EE7-B135-45FF-8568-AD5172C9D32D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1067EE7-B135-45FF-8568-AD5172C9D32D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1067EE7-B135-45FF-8568-AD5172C9D32D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFAB5F6-91D4-4521-B103-A2D9EBA6ECFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFAB5F6-91D4-4521-B103-A2D9EBA6ECFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFAB5F6-91D4-4521-B103-A2D9EBA6ECFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFAB5F6-91D4-4521-B103-A2D9EBA6ECFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29D25CCE-541A-46B9-B21C-DB5183AE89C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29D25CCE-541A-46B9-B21C-DB5183AE89C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29D25CCE-541A-46B9-B21C-DB5183AE89C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29D25CCE-541A-46B9-B21C-DB5183AE89C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8801CC70-1827-4C83-82AC-CBA03DD402B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8801CC70-1827-4C83-82AC-CBA03DD402B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8801CC70-1827-4C83-82AC-CBA03DD402B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8801CC70-1827-4C83-82AC-CBA03DD402B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
