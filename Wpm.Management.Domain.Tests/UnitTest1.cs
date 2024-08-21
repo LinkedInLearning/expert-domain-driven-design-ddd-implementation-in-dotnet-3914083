@@ -11,8 +11,8 @@ public class UnitTest1
         var id = Guid.NewGuid();
         var breedService = new FakeBreedService();
         var breedId = new BreedId(breedService.breeds[0].Id, breedService);
-        var pet1 = new Pet(id, "Gianni", 13, "Three-color", new Weight(20.5m), SexOfPet.Male, breedId);
-        var pet2 = new Pet(id, "Nina", 10, "Three-color", new Weight(18.5m), SexOfPet.Female, breedId);
+        var pet1 = new Pet(id, "Gianni", 13, "Three-color", SexOfPet.Male, breedId);
+        var pet2 = new Pet(id, "Nina", 10, "Three-color",SexOfPet.Female, breedId);
 
         Assert.True(pet1.Equals(pet2));
     }
@@ -23,8 +23,8 @@ public class UnitTest1
         var id = Guid.NewGuid();
         var breedService = new FakeBreedService();
         var breedId = new BreedId(breedService.breeds[0].Id, breedService);
-        var pet1 = new Pet(id, "Gianni", 13, "Three-color", new Weight(20.5m), SexOfPet.Male, breedId);
-        var pet2 = new Pet(id, "Nina", 10, "Three-color", new Weight(18.5m), SexOfPet.Female, breedId);
+        var pet1 = new Pet(id, "Gianni", 13, "Three-color", SexOfPet.Male, breedId);
+        var pet2 = new Pet(id, "Nina", 10, "Three-color", SexOfPet.Female, breedId);
 
         Assert.True(pet1 == pet2);
     }
@@ -37,8 +37,8 @@ public class UnitTest1
         var id2 = Guid.NewGuid();
         var breedService = new FakeBreedService();
         var breedId = new BreedId(breedService.breeds[0].Id, breedService);
-        var pet1 = new Pet(id1, "Gianni", 13, "Three-color", new Weight(20.5m), SexOfPet.Male, breedId);
-        var pet2 = new Pet(id2, "Nina", 10, "Three-color", new Weight(18.5m), SexOfPet.Female, breedId);
+        var pet1 = new Pet(id1, "Gianni", 13, "Three-color", SexOfPet.Male, breedId);
+        var pet2 = new Pet(id2, "Nina", 10, "Three-color", SexOfPet.Female, breedId);
 
         Assert.True(pet1 != pet2);
     }
@@ -77,5 +77,35 @@ public class UnitTest1
         {
             var breedId = new BreedId(id, breedService);
         });
+    }
+
+    [Fact]
+    public void WeightClass_should_be_ideal()
+    {
+        var breedService = new FakeBreedService();
+        var breedId = new BreedId(breedService.breeds[0].Id, breedService);
+        var pet = new Pet(Guid.NewGuid(), "Gianni", 13, "Three-color", SexOfPet.Male, breedId);
+        pet.SetWeight(new Weight(10), breedService);
+        Assert.True(pet.WeightClass == WeightClass.Ideal);
+    }
+
+    [Fact]
+    public void WeightClass_should_be_underweight()
+    {
+        var breedService = new FakeBreedService();
+        var breedId = new BreedId(breedService.breeds[0].Id, breedService);
+        var pet = new Pet(Guid.NewGuid(), "Gianni", 13, "Three-color", SexOfPet.Male, breedId);
+        pet.SetWeight(new Weight(8), breedService);
+        Assert.True(pet.WeightClass == WeightClass.Underweight);
+    }
+
+    [Fact]
+    public void WeightClass_should_be_overweight()
+    {
+        var breedService = new FakeBreedService();
+        var breedId = new BreedId(breedService.breeds[0].Id, breedService);
+        var pet = new Pet(Guid.NewGuid(), "Gianni", 13, "Three-color", SexOfPet.Male, breedId);
+        pet.SetWeight(new Weight(25), breedService);
+        Assert.True(pet.WeightClass == WeightClass.Overweight);
     }
 }
