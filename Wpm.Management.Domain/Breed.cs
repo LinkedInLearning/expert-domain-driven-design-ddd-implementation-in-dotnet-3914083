@@ -1,9 +1,9 @@
 ﻿namespace Wpm.Management.Domain;
 public class Breed : Entity
 {
-    public string Name { get; init; }
-    public WeightRange MaleIdealWeight { get; init; }
-    public WeightRange FemaleIdealWeight { get; init; }
+    public string Name { get; set; }
+    public WeightRange MaleIdealWeight { get; set; }
+    public WeightRange FemaleIdealWeight { get; set; }
 
     public Breed(string name,
                  WeightRange maleIdealWeight,
