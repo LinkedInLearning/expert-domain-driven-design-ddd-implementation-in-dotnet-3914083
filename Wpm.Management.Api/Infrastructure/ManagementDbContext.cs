@@ -29,3 +29,33 @@ public static class ManagementDbContextExtensions
         context.Database.CloseConnection();
     }
 }
+
+/*
+public class ManagementRepository(ManagementDbContext managementDbContext) : IManagementRepository
+{
+    public void Delete(Pet pet)
+    {
+        throw new NotImplementedException();
+    }
+
+    public IEnumerable<Pet> GetAll()
+    {
+        throw new NotImplementedException();
+    }
+
+    public Pet? GetById(Guid id)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Insert(Pet pet)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void Update(Pet pet)
+    {
+        throw new NotImplementedException();
+    }
+}
+*/

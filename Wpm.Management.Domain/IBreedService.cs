@@ -24,3 +24,14 @@ public class FakeBreedService : IBreedService
         return result ?? throw new ArgumentException("Breed was not found.");
     }
 }
+/*
+public interface IManagementRepository
+{
+    Pet? GetById(Guid id);
+    IEnumerable<Pet> GetAll();
+    void Insert(Pet pet);
+    void Update(Pet pet);
+    void Delete(Pet pet);
+
+}
+*/
