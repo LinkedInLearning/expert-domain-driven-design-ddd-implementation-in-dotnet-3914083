@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Wpm.Management.Api.Application;
 using Wpm.Management.Api.Infrastructure;
 using Wpm.Management.Domain;
 
@@ -12,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //builder.Services.AddScoped<IManagementRepository, ManagementRepository>();
 builder.Services.AddScoped<IBreedService, BreedService>();
+builder.Services.AddScoped<ManagementApplicationService>();
 builder.Services.AddDbContext<ManagementDbContext>(options =>
 {
     options.UseSqlite("Data source=WpmManagement.db");
