@@ -3,6 +3,10 @@
 ##
 ## Get latest from `dotnet new gitignore`
 
+WpmManagement.db
+WpmManagement.db-shm
+WpmManagement.db-wal
+
 # dotenv files
 .env
 

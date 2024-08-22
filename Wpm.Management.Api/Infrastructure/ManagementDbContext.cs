@@ -18,3 +18,14 @@ public class ManagementDbContext(DbContextOptions options) : DbContext(options)
         modelBuilder.Entity<Pet>().OwnsOne(x => x.Weight);
     }
 }
+
+public static class ManagementDbContextExtensions
+{
+    public static void EnsureDbIsCreated(this IApplicationBuilder app)
+    {
+        using var scope = app.ApplicationServices.CreateScope();
+        var context = scope.ServiceProvider.GetService<ManagementDbContext>();
+        context.Database.EnsureCreated();
+        context.Database.CloseConnection();
+    }
+}
