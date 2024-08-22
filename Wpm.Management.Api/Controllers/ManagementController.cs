@@ -5,7 +5,8 @@ namespace Wpm.Management.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ManagementController(ManagementApplicationService applicationService) : ControllerBase
+public class ManagementController(ManagementApplicationService applicationService,
+                                  ICommandHandler<SetWeightCommand> commandHandler) : ControllerBase
 {
     [HttpPost]
     public async Task<ActionResult> Post(CreatePetCommand command)
@@ -17,7 +18,7 @@ public class ManagementController(ManagementApplicationService applicationServic
     [HttpPut]
     public async Task<ActionResult> Put(SetWeightCommand command)
     {
-        await applicationService.Handle(command);
+        await commandHandler.Handle(command);
         return Ok();
     }
 }
