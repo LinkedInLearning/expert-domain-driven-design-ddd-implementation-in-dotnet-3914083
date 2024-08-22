@@ -1,3 +1,4 @@
+using Wpm.Clinic.Domain.Entities;
 using Wpm.Clinic.Domain.ValueObjects;
 
 namespace Wpm.Clinic.Domain.Tests;
@@ -83,7 +84,7 @@ public class UnitTest1
     public void Consultation_should_register_vitalsigns()
     {
         var c = new Consultation(Guid.NewGuid());
-        IEnumerable<VitalSigns> vitalSigns = [new VitalSigns(38.8m, 100, 120)];
+        IEnumerable<VitalSigns> vitalSigns = [new VitalSigns(DateTime.UtcNow, 38.8m, 100, 120)];
         c.RegisterVitalSigns(vitalSigns);
         Assert.True(c.VitalSignReadings.Count == 1);
         Assert.True(c.VitalSignReadings.First() == vitalSigns.First());

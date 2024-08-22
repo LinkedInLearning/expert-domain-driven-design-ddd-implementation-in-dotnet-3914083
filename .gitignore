@@ -6,6 +6,9 @@
 WpmManagement.db
 WpmManagement.db-shm
 WpmManagement.db-wal
+WpmClinic.db
+WpmClinic.db-shm
+WpmClinic.db-wal
 
 # dotenv files
 .env

@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.8" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Wpm.Clinic.Domain\Wpm.Clinic.Domain.csproj" />
   </ItemGroup>
 
 </Project>
