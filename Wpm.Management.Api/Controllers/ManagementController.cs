@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Wpm.Management.Api.Application;
 
 namespace Wpm.Management.Api.Controllers;
 
@@ -6,5 +7,9 @@ namespace Wpm.Management.Api.Controllers;
 [Route("[controller]")]
 public class ManagementController : ControllerBase
 {
-    
+    /*[HttpPost]
+    public async Task<ActionResult> Post(CreatePetCommand command)
+    {
+
+    }*/
 }
