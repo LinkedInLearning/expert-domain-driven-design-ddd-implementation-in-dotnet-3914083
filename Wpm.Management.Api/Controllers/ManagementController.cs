@@ -13,4 +13,11 @@ public class ManagementController(ManagementApplicationService applicationServic
         await applicationService.Handle(command);
         return Ok();
     }
+
+    [HttpPut]
+    public async Task<ActionResult> Put(SetWeightCommand command)
+    {
+        await applicationService.Handle(command);
+        return Ok();
+    }
 }
