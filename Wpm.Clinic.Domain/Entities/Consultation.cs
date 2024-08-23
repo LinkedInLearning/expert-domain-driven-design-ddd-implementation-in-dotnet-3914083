@@ -23,6 +23,11 @@ public class Consultation : AggregateRoot
                                                  patientId,
                                                  DateTime.UtcNow));
     }
+
+    public Consultation(IEnumerable<IDomainEvent> domainEvents)
+    {
+        Load(domainEvents);
+    }
     public void RegisterVitalSigns(IEnumerable<VitalSigns> vitalSigns)
     {
         ValidateConsultationStatus();
