@@ -1,4 +1,5 @@
-﻿using Wpm.Clinic.Domain.ValueObjects;
+﻿using Wpm.Clinic.Domain.Events;
+using Wpm.Clinic.Domain.ValueObjects;
 using Wpm.SharedKernel;
 
 namespace Wpm.Clinic.Domain.Entities;
@@ -10,18 +11,17 @@ public class Consultation : AggregateRoot
     public DateTimeRange When { get; private set; }
     public Text? Diagnosis { get; private set; }
     public Text? Treatment { get; private set; }
-    public PatientId PatientId { get; init; }
+    public PatientId PatientId { get; private set; }
     public Weight? CurrentWeight { get; private set; }
     public ConsultationStatus Status { get; private set; }
     public IReadOnlyCollection<DrugAdministration> AdministeredDrugs => administeredDrugs;
     public IReadOnlyCollection<VitalSigns> VitalSignReadings => vitalSignReadings;
 
     public Consultation(PatientId patientId)
-    {
-        Id = Guid.NewGuid();
-        PatientId = patientId;
-        Status = ConsultationStatus.Open;
-        When = DateTime.UtcNow;
+    {        
+        ApplyDomainEvent(new ConsultationStarted(Guid.NewGuid(),
+                                                 patientId,
+                                                 DateTime.UtcNow));
     }
     public void RegisterVitalSigns(IEnumerable<VitalSigns> vitalSigns)
     {
@@ -77,7 +77,15 @@ public class Consultation : AggregateRoot
 
     protected override void ChangeStateByUsingDomainEvent(IDomainEvent domainEvent)
     {
-        throw new NotImplementedException();
+        switch (domainEvent)
+        {
+            case ConsultationStarted e:
+                Id = e.Id;
+                PatientId = e.PatientId;
+                Status = ConsultationStatus.Open;
+                When = e.StartedAt;
+                break;
+        }
     }
 }
 
