@@ -74,6 +74,11 @@ public class Consultation : AggregateRoot
             throw new InvalidOperationException("The consultation is already closed.");
         }
     }
+
+    protected override void ChangeStateByUsingDomainEvent(IDomainEvent domainEvent)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 public enum ConsultationStatus
