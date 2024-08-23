@@ -7,8 +7,7 @@ public class Consultation : AggregateRoot
 {
     private readonly List<DrugAdministration> administeredDrugs = new();
     private readonly List<VitalSigns> vitalSignReadings = new();
-    public DateTime StartedAt { get; init; }
-    public DateTime? EndedAt { get; private set; }
+    public DateTimeRange When { get; private set; }
     public Text? Diagnosis { get; private set; }
     public Text? Treatment { get; private set; }
     public PatientId PatientId { get; init; }
@@ -22,7 +21,7 @@ public class Consultation : AggregateRoot
         Id = Guid.NewGuid();
         PatientId = patientId;
         Status = ConsultationStatus.Open;
-        StartedAt = DateTime.UtcNow;
+        When = DateTime.UtcNow;
     }
     public void RegisterVitalSigns(IEnumerable<VitalSigns> vitalSigns)
     {
@@ -47,7 +46,7 @@ public class Consultation : AggregateRoot
         }
 
         Status = ConsultationStatus.Closed;
-        EndedAt = DateTime.UtcNow;
+        When = new DateTimeRange(When.StartedAt, DateTime.UtcNow);
     }
 
     public void SetWeight(Weight weight)

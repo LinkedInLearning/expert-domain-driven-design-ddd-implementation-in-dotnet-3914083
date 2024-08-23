@@ -16,7 +16,7 @@ public class UnitTest1
     public void Consultation_should_not_have_ended_timestamp()
     {
         var c = new Consultation(Guid.NewGuid());
-        Assert.Null(c.EndedAt);
+        Assert.Null(c.When.EndedAt);
     }
 
     [Fact]
@@ -88,5 +88,41 @@ public class UnitTest1
         c.RegisterVitalSigns(vitalSigns);
         Assert.True(c.VitalSignReadings.Count == 1);
         Assert.True(c.VitalSignReadings.First() == vitalSigns.First());
+    }
+
+    [Fact]
+    public void DateTimeRange_should_be_valid()
+    {
+        var theDate = new DateTime(2027, 12, 24, 22, 0, 0);
+        var dr1 = new DateTimeRange(theDate, theDate.AddMinutes(10));
+        Assert.NotNull(dr1.Duration);
+    }
+
+    [Fact]
+    public void DateTimeRange_should_not_be_valid()
+    {
+        var theDate = new DateTime(2027, 12, 24, 22, 0, 0);
+        Assert.Throws<InvalidOperationException>(() =>
+        {
+            var dr1 = new DateTimeRange(theDate.AddMinutes(10), theDate);
+        });
+
+    }
+
+    [Fact]
+    public void DateTimeRange_should_be_ongoing()
+    {
+        var theDate = new DateTime(2027, 12, 24, 22, 0, 0);
+        var dr1 = new DateTimeRange(theDate);
+        Assert.Equal("Ongoing", dr1.Duration);
+    }
+
+    [Fact]
+    public void DateTimeRange_should_be_equals()
+    {
+        var theDate = new DateTime(2027, 12, 24, 22, 0, 0);
+        var dr1 = new DateTimeRange(theDate);
+        var dr2 = new DateTimeRange(theDate);
+        Assert.Equal(dr1, dr2);
     }
 }
